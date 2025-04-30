@@ -12,4 +12,16 @@
 
 body {
   background: var(--background);
+  height: 100%;
+}
+
+.outer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-container {
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
 }
