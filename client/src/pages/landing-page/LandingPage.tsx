@@ -1,9 +1,6 @@
 import { SetViewPropsInterface } from "../../types";
 import "./styles.css";
 
-// import Recommendations from "../recommendations/Recommendations.tsx";
-// import UserSelection from "../user-selection/UserSelection.tsx";
-
 export default function LandingPage({ setView }: SetViewPropsInterface) {
   return (
     <section>
