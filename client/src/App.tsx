@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { DisplayMode } from "./types.ts";
 
-import MainView from "./pages/main-view/MainView.tsx";
+import Router from "./pages/router/Router.tsx";
 import Header from "./pages/header/Header.tsx";
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div className="outer-container">
       <Header setView={setView} />
-      <MainView view={view} setView={setView} />
+      <Router view={view} setView={setView} />
     </div>
   );
 }
