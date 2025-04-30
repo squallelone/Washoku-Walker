@@ -1,0 +1,32 @@
+{
+  "type": "module",
+  "name": "japanfood",
+  "version": "1.0.0",
+  "description": "the food that you want in japan",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/squallelone/japanFood.git"
+  },
+  "author": "Mathieu Ngo Justin-K-Ellis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/squallelone/japanFood/issues"
+  },
+  "homepage": "https://github.com/squallelone/japanFood#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "knex": "^3.1.0",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.10",
+    "pg": "^8.15.6"
+  },
+  "keywords": []
+}
