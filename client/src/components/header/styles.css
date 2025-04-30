@@ -1,17 +1,17 @@
 .header {
+  align-items: center;
+  border-bottom: 1px solid var(--highlights);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   padding: 1rem;
-  border-bottom: 1px solid var(--highlights);
 }
 
 .header h1 {
+  color: var(--red);
+  font-family: "Reggae One", system-ui;
   font-size: 2rem;
   font-weight: 700;
-  font-family: "Reggae One", system-ui;
-  color: var(--red);
 }
 
 .nav {
