@@ -25,3 +25,13 @@ body {
   width: 80%;
   margin: 0 auto;
 }
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.sub-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
