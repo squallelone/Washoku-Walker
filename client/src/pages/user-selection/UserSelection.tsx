@@ -1,7 +1,9 @@
+import "./styles.css";
 import { useState, useEffect } from "react";
 
 export default function UserSelection() {
   const [cuisineTypes, setCusinesType] = useState<string[] | null>(null);
+  const [chosenCuisine, setChosenCuisine] = useState<string>("");
   const url = import.meta.env.VITE_CUISINE_TYPES;
 
   useEffect(() => {
@@ -18,19 +20,27 @@ export default function UserSelection() {
     }
   }
 
+  function handleCuisineSelection(event): void {
+    setChosenCuisine(event.target.value);
+  }
+
   return (
-    <section>
+    <>
       <h1 className="page-title">Select a Food and Find a Restaurant</h1>
       <div className="container">
-        <select>
-          <option value=""></option>
-          {cuisineTypes?.map((cuisine) => (
-            <option key={cuisine} value={cuisine}>
-              {cuisine}
-            </option>
-          ))}
-        </select>
+        <section>
+          <div className="container">
+            <select onChange={(event) => handleCuisineSelection(event)}>
+              <option value={chosenCuisine}></option>
+              {cuisineTypes?.map((cuisine) => (
+                <option key={cuisine} value={cuisine}>
+                  {cuisine}
+                </option>
+              ))}
+            </select>
+          </div>
+        </section>
       </div>
-    </section>
+    </>
   );
 }
