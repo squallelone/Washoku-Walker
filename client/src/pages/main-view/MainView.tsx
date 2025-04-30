@@ -20,7 +20,7 @@ export default function MainView({ view, setView }: ViewPropsInterface) {
       return <UserSelection />;
 
     case "login":
-      return <Login />;
+      return <Login setView={setView} />;
 
     case "userProfile":
       return <UserProfile />;
