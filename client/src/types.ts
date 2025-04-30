@@ -15,4 +15,16 @@ interface SetViewPropsInterface {
   setView: (mode: DisplayMode) => void;
 }
 
-export type { DisplayMode, ViewPropsInterface, SetViewPropsInterface };
+interface Restaurant {
+  name: string;
+  rating: number;
+  address: string;
+  maps_url: string;
+}
+
+export type {
+  DisplayMode,
+  ViewPropsInterface,
+  SetViewPropsInterface,
+  Restaurant,
+};
