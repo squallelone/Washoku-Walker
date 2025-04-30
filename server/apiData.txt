@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Karaoke Pasela Shinjuku Honten",
+    "rating": 4.3,
+    "address": "パセラリゾーツ新宿本店１Ｆ, 1-chōme-3−１６ Kabukichō, Shinjuku City",
+    "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJj3M-oNmMGGAROsKvPMOxT_o"
+  },
+  {
+    "name": "Kurumaya Bekkan",
+    "rating": 4.3,
+    "address": "3-chōme-21-1 Shinjuku, Shinjuku City",
+    "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJkSMU8dmMGGARU20fByF59WI"
+  },
+  {
+    "name": "Karaoke Pasela Shinjuku Yasukunidori",
+    "rating": 4.2,
+    "address": "パセラリゾーツ新宿靖国通り店 １Ｆ, 1-chōme-16−２ Kabukichō, Shinjuku City",
+    "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJxWXywtmMGGARzvLeUd-eb0A"
+  },
+  {
+    "name": "Tempura Shinjuku Tsunahachi Tsunohazuan",
+    "rating": 4.2,
+    "address": "T＆Tビル 5階, 3-chōme-32−１０ Shinjuku, Shinjuku City",
+    "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJme51XdqMGGAR5HuQeZwe7EY"
+  },
+  {
+    "name": "All Day Dining Jurin",
+    "rating": 4.1,
+    "address": "京王プラザホテル 内, 2-chōme-2−１ Nishishinjuku, Shinjuku City",
+    "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJE2tqZtSMGGARt24OI2Lv-MA"
+  }
+]
+
+{
+  "dish": "ramen",
+  "restaurants": [
+    {
+      "name": "HALAL WAGYU RAMEN SHINJUKU-TEI Tokyo Shinjuku",
+      "rating": 4.7,
+      "address": "Shinjuku City, Shinjuku, 3 Chome−11−6 エクレ新宿 B103",
+      "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ8WQHFoqNGGARpc767pcSol8"
+    },
+    {
+      "name": "Hijiri-ya Nishi-Shinjuku",
+      "rating": 4.4,
+      "address": "Shinjuku City, Nishishinjuku, 6 Chome−16−12 コーポ寺前",
+      "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJCb22ktXyGGARrxEA2Twfv4A"
+    },
+    {
+      "name": "Ichiran Shinjuku Kabuki-cho",
+      "rating": 4.4,
+      "address": "Shinjuku City, Kabukicho, 1 Chome−17−10 CR.B&Vビル 地下 1 階",
+      "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJp1Kx1dmMGGARvbZ_YYRx0vQ"
+    },
+    {
+      "name": "Damena Rinjin Shinjuku",
+      "rating": 4.3,
+      "address": "1 Chome-27-2 Kabukicho, Shinjuku City",
+      "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJkwclk6GNGGARPYNl-XWaoSo"
+    },
+    {
+      "name": "Ramen Hiro",
+      "rating": 4.3,
+      "address": "Shinjuku City, Kabukicho, 1 Chome−12−2 第58東京ビル B1F",
+      "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJHfKcnyeNGGARgDoHMZSfyKc"
+    }
+  ]
+}
