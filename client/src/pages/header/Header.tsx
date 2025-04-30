@@ -1,11 +1,7 @@
 import "./styles.css";
-import { DisplayMode } from "../../types.ts";
+import { SetViewPropsInterface } from "../../types";
 
-interface HeaderInterface {
-  setView: (mode: DisplayMode) => void;
-}
-
-export default function Header({ setView }: HeaderInterface) {
+export default function Header({ setView }: SetViewPropsInterface) {
   return (
     <header className="header">
       <h1 onClick={() => setView("landingPage")}>Washoku Walker</h1>

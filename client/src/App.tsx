@@ -11,7 +11,7 @@ export default function App() {
   return (
     <div className="outer-container">
       <Header setView={setView} />
-      <MainView view={view} />
+      <MainView view={view} setView={setView} />
     </div>
   );
 }

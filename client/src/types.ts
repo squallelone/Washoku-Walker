@@ -6,4 +6,13 @@ type DisplayMode =
   | "userProfile"
   | "aboutPage";
 
-export type { DisplayMode };
+interface ViewPropsInterface {
+  view: DisplayMode;
+  setView: (mode: DisplayMode) => void;
+}
+
+interface SetViewPropsInterface {
+  setView: (mode: DisplayMode) => void;
+}
+
+export type { DisplayMode, ViewPropsInterface, SetViewPropsInterface };

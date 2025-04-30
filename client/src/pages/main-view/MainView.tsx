@@ -1,4 +1,4 @@
-import { DisplayMode } from "../../types.ts";
+import { ViewPropsInterface } from "../../types.ts";
 
 import LandingPage from "../landing-page/LandingPage.tsx";
 import Recommendations from "../recommendations/Recommendations.tsx";
@@ -8,10 +8,10 @@ import UserProfile from "../user-profile/UserProfile.tsx";
 import AboutPage from "../about-page/AboutPage.tsx";
 import NotFound from "../404/404.tsx";
 
-export default function MainView({ view }: { view: DisplayMode }) {
+export default function MainView({ view, setView }: ViewPropsInterface) {
   switch (view) {
     case "landingPage":
-      return <LandingPage />;
+      return <LandingPage setView={setView} />;
 
     case "recommendations":
       return <Recommendations />;
