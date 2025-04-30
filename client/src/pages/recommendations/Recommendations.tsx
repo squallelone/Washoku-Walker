@@ -1,3 +1,7 @@
 export default function Recommendations() {
-  return <div>Recommendations</div>;
+  return (
+    <section>
+      <h1 className="page-title">Recommended Restaurants Near You</h1>
+    </section>
+  );
 }
