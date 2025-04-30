@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { Restaurant } from "../../types";
+import RestaurantCard from "../../components/restaurant-card/RestaurantCard";
 
 export default function Recommendations() {
   const [restaurants, setRestaurants] = useState<Restaurant[] | null>(null);
@@ -19,7 +20,7 @@ export default function Recommendations() {
       setRestaurants(data);
       setIsLoading(false);
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setIsError(true);
     }
   }
@@ -30,6 +31,11 @@ export default function Recommendations() {
   return (
     <section>
       <h1 className="page-title">Recommended Restaurants Near You</h1>
+      <div className="recommendation-list">
+        {restaurants?.map((rest) => (
+          <RestaurantCard key={rest.name} restaurant={rest} />
+        ))}
+      </div>
     </section>
   );
 }
