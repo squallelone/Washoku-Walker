@@ -1,5 +1,6 @@
 import "./styles.css";
 import { useState, useEffect } from "react";
+import RestaurantsFromSelection from "../../components/restaurants-from-selection/RestaurantsFromSelection.tsx";
 
 export default function UserSelection() {
   const [cuisineTypes, setCusinesType] = useState<string[] | null>(null);
@@ -28,17 +29,21 @@ export default function UserSelection() {
     <>
       <h1 className="page-title">Select a Food and Find a Restaurant</h1>
       <div className="container">
+        <section className="choice-container">
+          <h3 className="sub-heading">Looking for</h3>
+          <select onChange={(event) => handleCuisineSelection(event)}>
+            <option value={chosenCuisine}></option>
+            {cuisineTypes?.map((cuisine) => (
+              <option key={cuisine} value={cuisine}>
+                {cuisine}
+              </option>
+            ))}
+          </select>
+          <span>?</span>
+        </section>
         <section>
-          <div className="container">
-            <select onChange={(event) => handleCuisineSelection(event)}>
-              <option value={chosenCuisine}></option>
-              {cuisineTypes?.map((cuisine) => (
-                <option key={cuisine} value={cuisine}>
-                  {cuisine}
-                </option>
-              ))}
-            </select>
-          </div>
+          <h3 className="sub-heading">You might like:</h3>
+          <RestaurantsFromSelection chosenCuisine={chosenCuisine} />
         </section>
       </div>
     </>

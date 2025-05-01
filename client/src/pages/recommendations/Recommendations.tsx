@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
-import { Restaurant } from "../../types";
+// import { Restaurant } from "../../types";
 import RestaurantCard from "../../components/restaurant-card/RestaurantCard";
 import useFetchRestaurants from "../../hooks/useFetchRestaurants";
 
