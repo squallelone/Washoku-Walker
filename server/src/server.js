@@ -14,6 +14,7 @@ app.use(express.json());
 app.get("/api/test", (req, res) => {
   res.json({ ok: true, message: "testing" });
 });
+
 app.use("/api/restaurant", router);
 
 app.listen(port, () => {
