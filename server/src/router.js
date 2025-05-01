@@ -1,7 +1,7 @@
 import express from "express";
 import { getRestaurantsByDish } from "./controllers/restaurantsByDishController.js";
 import { getNearbyRestaurants } from "./controllers/nearbyRestaurantsController.js";
-import dishesController from "./controllers/dishesController.js";
+import dishesController from "./controllers/dishes.controller.js";
 
 const router = express.Router();
 
