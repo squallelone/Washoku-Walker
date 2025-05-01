@@ -5,10 +5,9 @@ export default {
   // development: {
   client: "pg",
   connection: {
-    host: "127.0.0.1",
-    user: "mathieungo",
-    database: "japanFood",
-    charset: "utf8",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    database: process.env.DB_NAME,
   },
   migrations: {
     directory: ".knex/migrations",
@@ -16,7 +15,6 @@ export default {
   seeds: {
     directory: ".knex/seeds",
   },
-  useNullAsDefault: true,
   // },
 
   // == Note: Commenting out for now. Separate dev and prod set ups may not be necessary
