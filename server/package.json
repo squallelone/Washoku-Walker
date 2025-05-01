@@ -6,7 +6,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "migrate-latest": "knex migrate:latest",
+    "migrate-down": "knex migrate:down",
+    "seed-data": "knex seed:run"
   },
   "repository": {
     "type": "git",
