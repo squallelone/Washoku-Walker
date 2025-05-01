@@ -1,0 +1,11 @@
+section {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: justify;
+}
