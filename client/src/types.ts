@@ -18,8 +18,9 @@ interface SetViewPropsInterface {
 interface Restaurant {
   name: string;
   rating: number;
-  address: string;
-  maps_url: string;
+  formattedAddress: string;
+  websiteUri: string;
+  openNow: boolean;
 }
 
 export type {
