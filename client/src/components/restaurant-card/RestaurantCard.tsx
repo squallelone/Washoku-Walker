@@ -8,9 +8,9 @@ interface RestaurantCardProps {
 export default function RestaurantCard({ restaurant }: RestaurantCardProps) {
   return (
     <div className="card">
-      <h3>{restaurant.name}</h3>
+      <h3>{restaurant.displayName.text}</h3>
       <p>Rating: {restaurant.rating}</p>
-      <p className="address">{restaurant.address}</p>
+      <p className="address">{restaurant.formattedAddress}</p>
     </div>
   );
 }

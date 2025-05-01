@@ -8,15 +8,25 @@ export default function useFetchRestaurants(
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [lat, setLat] = useState(null);
+  const [log, setLog] = useState(null);
+
   useEffect(() => {
     getRestaurants();
-  }, []);
+  }, [lat, log]);
 
   async function getRestaurants() {
     try {
-      const response = await fetch(url);
+      await getGeolocation();
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ lat, log }),
+      });
       const data = await response.json();
-      setRestaurants(data);
+      console.log("response data:", data);
+
+      setRestaurants(data.places);
       setIsLoading(false);
     } catch (error) {
       console.error(error);
@@ -24,5 +34,16 @@ export default function useFetchRestaurants(
     }
   }
 
+  async function getGeolocation() {
+    await navigator.geolocation.getCurrentPosition(success, error);
+  }
+  function success(position) {
+    setLat(position.coords.latitude);
+    setLog(position.coords.longitude);
+  }
+
+  function error() {
+    console.error("Error when trying to get location.");
+  }
   return [restaurants, isError, isLoading];
 }

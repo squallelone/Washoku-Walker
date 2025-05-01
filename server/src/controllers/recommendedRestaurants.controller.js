@@ -3,7 +3,7 @@ import { getRecommendedRestaurants } from "../models/googlePlaces.model.js";
 
 const recommendationController = express.Router();
 
-recommendationController.get("/", async (req, res) => {
+recommendationController.post("/", async (req, res) => {
   const { lat, log } = req.body;
 
   try {
