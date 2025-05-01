@@ -8,13 +8,13 @@ import UserProfile from "../user-profile/UserProfile.tsx";
 import AboutPage from "../about-page/AboutPage.tsx";
 import NotFound from "../404/404.tsx";
 
-export default function Router({ view, setView, userLoc }: ViewPropsInterface) {
+export default function Router({ view, setView }: ViewPropsInterface) {
   switch (view) {
     case "landingPage":
       return <LandingPage setView={setView} />;
 
     case "recommendations":
-      return <Recommendations userLoc={userLoc} />;
+      return <Recommendations />;
 
     case "userSelection":
       return <UserSelection />;

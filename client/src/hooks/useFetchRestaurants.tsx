@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import UserLocationContext from "../UserLocationContext";
 import { Restaurant } from "../types";
 
 export default function useFetchRestaurants(
-  url: string,
-  userLoc
+  url: string
 ): Array<Restaurant[] | boolean | null> {
   const [restaurants, setRestaurants] = useState<Restaurant[] | null>(null);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  // const [lat, setLat] = useState(null);
-  // const [log, setLog] = useState(null);
+  const userLoc = useContext(UserLocationContext);
+  console.log(userLoc);
 
   useEffect(() => {
     getRestaurants();
@@ -18,14 +18,12 @@ export default function useFetchRestaurants(
 
   async function getRestaurants() {
     try {
-      // await getGeolocation();
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ lat: userLoc.lat, log: userLoc.log }),
       });
       const data = await response.json();
-      console.log("response data:", data);
 
       setRestaurants(data);
       setIsLoading(false);

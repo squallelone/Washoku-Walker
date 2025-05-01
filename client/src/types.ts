@@ -23,9 +23,15 @@ interface Restaurant {
   openNow: boolean;
 }
 
+interface UserLocation {
+  lat: number | null;
+  log: number | null;
+}
+
 export type {
   DisplayMode,
   ViewPropsInterface,
   SetViewPropsInterface,
   Restaurant,
+  UserLocation,
 };
