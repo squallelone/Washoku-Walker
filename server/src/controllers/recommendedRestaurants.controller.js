@@ -7,7 +7,18 @@ recommendationController.post("/", async (req, res) => {
   const { lat, log } = req.body;
 
   try {
-    const places = await getRecommendedRestaurants({ lat, log });
+    const rawPlaces = await getRecommendedRestaurants({ lat, log });
+    const places = rawPlaces.places.map((place) => {
+      return {
+        name: place.displayName.text,
+        rating: place.rating,
+        address: place.formattedAddress,
+        url: place.websiteUri,
+        openNow: place.regularOpeningHours.openNow,
+      };
+    });
+    // console.log(places);
+
     res.json(places);
   } catch (error) {
     res.status(500);

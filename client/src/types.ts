@@ -16,10 +16,10 @@ interface SetViewPropsInterface {
 }
 
 interface Restaurant {
-  displayName: object;
+  name: string;
   rating: number;
-  formattedAddress: string;
-  websiteUri: string;
+  address: string;
+  url: string;
   openNow: boolean;
 }
 
