@@ -31,40 +31,37 @@
       "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJE2tqZtSMGGARt24OI2Lv-MA"
     }
   ],
-  "byDish": {
-    "dish": "ramen",
-    "restaurants": [
-      {
-        "name": "HALAL WAGYU RAMEN SHINJUKU-TEI Tokyo Shinjuku",
-        "rating": 4.7,
-        "address": "Shinjuku City, Shinjuku, 3 Chome−11−6 エクレ新宿 B103",
-        "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ8WQHFoqNGGARpc767pcSol8"
-      },
-      {
-        "name": "Hijiri-ya Nishi-Shinjuku",
-        "rating": 4.4,
-        "address": "Shinjuku City, Nishishinjuku, 6 Chome−16−12 コーポ寺前",
-        "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJCb22ktXyGGARrxEA2Twfv4A"
-      },
-      {
-        "name": "Ichiran Shinjuku Kabuki-cho",
-        "rating": 4.4,
-        "address": "Shinjuku City, Kabukicho, 1 Chome−17−10 CR.B&Vビル 地下 1 階",
-        "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJp1Kx1dmMGGARvbZ_YYRx0vQ"
-      },
-      {
-        "name": "Damena Rinjin Shinjuku",
-        "rating": 4.3,
-        "address": "1 Chome-27-2 Kabukicho, Shinjuku City",
-        "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJkwclk6GNGGARPYNl-XWaoSo"
-      },
-      {
-        "name": "Ramen Hiro",
-        "rating": 4.3,
-        "address": "Shinjuku City, Kabukicho, 1 Chome−12−2 第58東京ビル B1F",
-        "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJHfKcnyeNGGARgDoHMZSfyKc"
-      }
-    ]
-  },
+  "byDish": [
+    {
+      "name": "HALAL WAGYU RAMEN SHINJUKU-TEI Tokyo Shinjuku",
+      "rating": 4.7,
+      "address": "Shinjuku City, Shinjuku, 3 Chome−11−6 エクレ新宿 B103",
+      "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJ8WQHFoqNGGARpc767pcSol8"
+    },
+    {
+      "name": "Hijiri-ya Nishi-Shinjuku",
+      "rating": 4.4,
+      "address": "Shinjuku City, Nishishinjuku, 6 Chome−16−12 コーポ寺前",
+      "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJCb22ktXyGGARrxEA2Twfv4A"
+    },
+    {
+      "name": "Ichiran Shinjuku Kabuki-cho",
+      "rating": 4.4,
+      "address": "Shinjuku City, Kabukicho, 1 Chome−17−10 CR.B&Vビル 地下 1 階",
+      "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJp1Kx1dmMGGARvbZ_YYRx0vQ"
+    },
+    {
+      "name": "Damena Rinjin Shinjuku",
+      "rating": 4.3,
+      "address": "1 Chome-27-2 Kabukicho, Shinjuku City",
+      "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJkwclk6GNGGARPYNl-XWaoSo"
+    },
+    {
+      "name": "Ramen Hiro",
+      "rating": 4.3,
+      "address": "Shinjuku City, Kabukicho, 1 Chome−12−2 第58東京ビル B1F",
+      "maps_url": "https://www.google.com/maps/place/?q=place_id:ChIJHfKcnyeNGGARgDoHMZSfyKc"
+    }
+  ],
   "cuisine": ["ramen", "katsudon", "sushi"]
 }
