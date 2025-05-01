@@ -5,8 +5,8 @@
   "description": "the food that you want in japan",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
