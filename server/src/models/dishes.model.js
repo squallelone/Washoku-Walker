@@ -4,6 +4,7 @@ import knex from "../knex.js";
 async function getAll() {
   const dishes = await knex
     .select(
+      "uuid",
       "name",
       "category",
       "description",
