@@ -10,7 +10,6 @@ export default function useFetchRestaurants(
   const [isLoading, setIsLoading] = useState(true);
 
   const userLoc = useContext(UserLocationContext);
-  console.log(userLoc);
 
   useEffect(() => {
     getRestaurants();
@@ -33,16 +32,5 @@ export default function useFetchRestaurants(
     }
   }
 
-  // async function getGeolocation() {
-  //   await navigator.geolocation.getCurrentPosition(success, error);
-  // }
-  // function success(position) {
-  //   setLat(position.coords.latitude);
-  //   setLog(position.coords.longitude);
-  // }
-
-  // function error() {
-  //   console.error("Error when trying to get location.");
-  // }
   return [restaurants, isError, isLoading];
 }
