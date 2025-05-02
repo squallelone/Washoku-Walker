@@ -57,13 +57,13 @@ async function getRestaurantsByDishAndArea(dish, area) {
 
 // Helper function
 function processPlaces(rawPlaces) {
-  const places = rawPlaces.places.map((place) => {
+  const places = (rawPlaces.places || []).map((place) => {
     return {
-      name: place.displayName.text,
+      name: (place.displayName || {}).text ?? "noName",
       rating: place.rating,
       address: place.formattedAddress,
       url: place.websiteUri,
-      openNow: place.regularOpeningHours.openNow,
+      openNow: (place.regularOpeningHours || {}).openNow,
     };
   });
 
