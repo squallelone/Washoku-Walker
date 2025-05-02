@@ -49,7 +49,10 @@ async function getRestaurantsByDishAndArea(dish, area) {
     }),
   });
   const data = await response.json();
-  return processPlaces(data);
+  if (data.places) {
+    return processPlaces(data);
+  }
+  console.error(data);
 }
 
 // Helper function
