@@ -10,7 +10,7 @@ export default function useGetUserLocation() {
       setLog(position.coords.longitude);
     },
     (error) => {
-      console.error("Error when trying to get location.");
+      console.error("Error when trying to get location.", error);
     }
   );
 
