@@ -11,7 +11,12 @@ byDishAndAreaController.get("/", async (req, res) => {
   }
   try {
     const places = await getRestaurantsByDishAndArea(dish, area);
-    res.json(places.slice(0, 5));
+    if (Array.isArray(places)) {
+      res.json(places.slice(0, 5));
+    }
+    console.error(places);
+    res.status(500);
+    res.end();
   } catch (error) {
     console.error(error);
     res.status(500);
