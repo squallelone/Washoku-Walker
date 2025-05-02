@@ -9,7 +9,8 @@
     "dev": "nodemon ./src/server.js",
     "migrate-latest": "knex migrate:latest",
     "migrate-down": "knex migrate:down",
-    "seed-data": "knex seed:run"
+    "seed-data": "knex seed:run",
+    "build": "cd ./client && npm install && npm run build && cd ../server && npm install"
   },
   "repository": {
     "type": "git",
