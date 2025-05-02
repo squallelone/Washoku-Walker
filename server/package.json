@@ -1,9 +1,9 @@
 {
   "type": "module",
-  "name": "japanfood",
+  "name": "washoku_walker",
   "version": "1.0.0",
-  "description": "the food that you want in japan",
-  "main": "index.js",
+  "description": "Find restaurants in Japan.",
+  "main": "server.js",
   "scripts": {
     "start": "node ./src/server.js",
     "dev": "nodemon ./src/server.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/squallelone/japanFood.git"
+    "url": "git+https://github.com/Justin-K-Ellis/Washoku-Walker"
   },
   "author": "Mathieu Ngo Justin-K-Ellis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/squallelone/japanFood/issues"
+    "url": "https://github.com/Justin-K-Ellis/Washoku-Walker/issues"
   },
-  "homepage": "https://github.com/squallelone/japanFood#readme",
+  "homepage": "https://github.com/Justin-K-Ellis/Washoku-Walker/issues#readme",
   "dependencies": {
     "@googlemaps/places": "^2.0.1",
     "cors": "^2.8.5",
