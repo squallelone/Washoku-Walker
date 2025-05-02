@@ -10,6 +10,7 @@ recommendationController.post("/", async (req, res) => {
     const places = await getRecommendedRestaurants({ lat, log });
     res.json(places);
   } catch (error) {
+    console.error(error);
     res.status(500);
     res.json({
       message:

@@ -13,6 +13,7 @@ byDishAndAreaController.get("/", async (req, res) => {
     const places = await getRestaurantsByDishAndArea(dish, area);
     res.json(places.slice(0, 5));
   } catch (error) {
+    console.error(error);
     res.status(500);
     res.json({
       message: "Something went wrong when trying get dish by area.",
