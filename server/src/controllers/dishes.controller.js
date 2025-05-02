@@ -8,7 +8,7 @@ dishesController.get("/", async (_req, res) => {
     const dishes = await dishesModel.getAll();
     res.json(dishes);
   } catch (error) {
-    console.error(error);
+    console.error("caught error in dishes controller:", error);
     res.status(500);
     res.json({
       message: "Something went wrong when getting all dishes.",

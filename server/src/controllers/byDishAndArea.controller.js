@@ -14,11 +14,11 @@ byDishAndAreaController.get("/", async (req, res) => {
     if (Array.isArray(places)) {
       res.json(places.slice(0, 5));
     }
-    console.error(places);
+    console.error("attempted to fetch from google api:", places);
     res.status(500);
     res.end();
   } catch (error) {
-    console.error(error);
+    console.error("catch error in dishes and area controller:", error);
     res.status(500);
     res.json({
       message: "Something went wrong when trying get dish by area.",
