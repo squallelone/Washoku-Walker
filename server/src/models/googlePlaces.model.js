@@ -1,6 +1,9 @@
 import dotenv from "dotenv";
 dotenv.config();
 
+const fieldMask =
+  "places.displayName,places.rating,places.formattedAddress,places.websiteUri,places.regularOpeningHours.openNow";
+
 // This is for users who aren't sure what they want and need restaurant
 // recommendations near them.
 async function getRecommendedRestaurants(locationData) {
@@ -10,8 +13,7 @@ async function getRecommendedRestaurants(locationData) {
     headers: {
       "Content-Type": "application/json",
       "X-Goog-Api-Key": process.env.GOOGLE_MAPS_API_KEY,
-      "X-Goog-FieldMask":
-        "places.displayName,places.rating,places.formattedAddress,places.websiteUri,places.regularOpeningHours.openNow",
+      "X-Goog-FieldMask": fieldMask,
     },
     body: JSON.stringify({
       includedPrimaryTypes: ["restaurant"],
@@ -29,7 +31,40 @@ async function getRecommendedRestaurants(locationData) {
   });
 
   const data = await response.json();
-  return data;
+  return processPlaces(data);
 }
 
-export { getRecommendedRestaurants };
+// This is for user who want to eat a specific kind of food in a specific area.
+async function getRestaurantsByDishAndArea(dish, area) {
+  const url = "https://places.googleapis.com/v1/places:searchText";
+  const response = await fetch(url, {
+    method: "post",
+    headers: {
+      "Content-type": "application/json",
+      "X-Goog-Api-Key": process.env.GOOGLE_MAPS_API_KEY,
+      "X-Goog-FieldMask": fieldMask,
+    },
+    body: JSON.stringify({
+      textQuery: `${dish} restaurants in ${area}`,
+    }),
+  });
+  const data = await response.json();
+  return processPlaces(data);
+}
+
+// Helper function
+function processPlaces(rawPlaces) {
+  const places = rawPlaces.places.map((place) => {
+    return {
+      name: place.displayName.text,
+      rating: place.rating,
+      address: place.formattedAddress,
+      url: place.websiteUri,
+      openNow: place.regularOpeningHours.openNow,
+    };
+  });
+
+  return places;
+}
+
+export { getRecommendedRestaurants, getRestaurantsByDishAndArea };
