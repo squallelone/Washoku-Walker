@@ -12,4 +12,15 @@ h1 {
 .choice-container {
   display: flex;
   flex-direction: row;
+  align-items: start;
+  padding: 2rem;
+}
+
+.selection-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-display {
+  width: 90%;
 }

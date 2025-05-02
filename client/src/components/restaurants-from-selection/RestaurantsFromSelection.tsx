@@ -4,11 +4,15 @@ import { Restaurant } from "../../types";
 import useFetchRestaurants from "../../hooks/useFetchRestaurants";
 import RestaurantCard from "../restaurant-card/RestaurantCard";
 
+interface SelectionProps {
+  chosenCuisine: string;
+  chosenWard: string;
+}
+
 export default function RestaurantsFromSelection({
   chosenCuisine,
-}: {
-  chosenCuisine: string;
-}) {
+  chosenWard,
+}: SelectionProps) {
   const [restaurants, setRestaurants] = useState<Restaurant[] | null>(null);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,13 +20,12 @@ export default function RestaurantsFromSelection({
 
   useEffect(() => {
     getRestaurants();
-    console.log(restaurants);
-  }, [chosenCuisine]);
+  }, [chosenCuisine, chosenWard]);
 
   async function getRestaurants() {
     try {
       const response = await fetch(
-        `${url}?dish=${chosenCuisine || "pizza"}&area=minato`
+        `${url}?dish=${chosenCuisine || "pizza"}&area=${chosenWard}`
       );
       const data = await response.json();
       setRestaurants(data);
@@ -37,7 +40,7 @@ export default function RestaurantsFromSelection({
   if (isLoading) console.log("Loading...");
 
   return (
-    <section>
+    <section className="card-display">
       {restaurants?.map((rest: Restaurant) => (
         <RestaurantCard key={rest.name} restaurant={rest} />
       ))}

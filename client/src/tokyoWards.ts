@@ -1,0 +1,27 @@
+const tokyoWards = [
+  "Adachi",
+  "Arakawa",
+  "Bunkyō",
+  "Chiyoda",
+  "Chuo",
+  "Edogawa",
+  "Itabashi",
+  "Katsushika",
+  "Kita",
+  "Koto",
+  "Meguro",
+  "Minato",
+  "Nakano",
+  "Nerima",
+  "Ōta",
+  "Setagaya",
+  "Shibuya",
+  "Shinagawa",
+  "Shinjuku",
+  "Suginami",
+  "Sumida",
+  "Taito",
+  "Toshima",
+];
+
+export default tokyoWards;
