@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-
 import { Restaurant } from "../../types";
-import useFetchRestaurants from "../../hooks/useFetchRestaurants";
 import RestaurantCard from "../restaurant-card/RestaurantCard";
 
 interface SelectionProps {
@@ -28,16 +26,21 @@ export default function RestaurantsFromSelection({
         `${url}?dish=${chosenCuisine || "pizza"}&area=${chosenWard}`
       );
       const data = await response.json();
-      setRestaurants(data);
-      setIsLoading(false);
+      if (response.ok) {
+        setRestaurants(data);
+        setIsLoading(false);
+      } else {
+        setIsError(true);
+      }
     } catch (error) {
       setIsError(true);
       console.error(error);
     }
   }
 
-  if (isError) console.log("Somethign went wrong");
-  if (isLoading) console.log("Loading...");
+  if (isError) return <h3 className="sub-heading">Something went wrong</h3>;
+  if (isLoading) return <h3 className="sub-heading">Loading...</h3>;
+  console.log(restaurants);
 
   return (
     <section className="card-display">
