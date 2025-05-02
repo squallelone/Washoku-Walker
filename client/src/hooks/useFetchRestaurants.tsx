@@ -2,7 +2,9 @@ import { useState, useEffect, useContext } from "react";
 import UserLocationContext from "../UserLocationContext";
 import { Restaurant } from "../types";
 
-export default function useFetchRestaurants(url: string) {
+export default function useFetchRestaurants(
+  url: string
+): [Restaurant[], boolean, boolean] {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);

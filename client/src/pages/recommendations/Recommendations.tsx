@@ -11,7 +11,7 @@ export default function Recommendations() {
   if (isLoading) return <p>Loading...</p>;
   console.log(restaurants);
 
-  if (restaurants !== null && restaurants !== false) {
+  if (restaurants !== null) {
     return (
       <section>
         <h1 className="page-title">Recommended Restaurants Near You</h1>

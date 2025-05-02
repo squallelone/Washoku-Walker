@@ -24,11 +24,15 @@ export default function UserSelection() {
     }
   }
 
-  function handleCuisineSelection(event): void {
+  function handleCuisineSelection(
+    event: React.ChangeEvent<HTMLSelectElement>
+  ): void {
     setChosenCuisine(event.target.value);
   }
 
-  function handleWardSelection(event): void {
+  function handleWardSelection(
+    event: React.ChangeEvent<HTMLSelectElement>
+  ): void {
     setChosenWard(event?.target.value);
   }
 
@@ -40,7 +44,11 @@ export default function UserSelection() {
           <h3 className="sub-heading">I'm looking for &nbsp;</h3>
           <div className="selection-row">
             {/* Cuisine type */}
-            <select onChange={(event) => handleCuisineSelection(event)}>
+            <select
+              onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+                handleCuisineSelection(event);
+              }}
+            >
               <option value={chosenCuisine}></option>
               {cuisineTypes?.map((cuisine) => (
                 <option key={cuisine.uuid} value={cuisine.name}>
@@ -50,7 +58,11 @@ export default function UserSelection() {
             </select>
             <h3 className="sub-heading">&nbsp; in &nbsp;</h3>
             {/* Area */}
-            <select onChange={(event) => handleWardSelection(event)}>
+            <select
+              onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+                handleWardSelection(event);
+              }}
+            >
               <option value={chosenWard}></option>
               {tokyoWards.map((ward) => (
                 <option key={ward} value={ward}>
