@@ -40,7 +40,6 @@ export default function RestaurantsFromSelection({
 
   if (isError) return <h3 className="sub-heading">Something went wrong</h3>;
   if (isLoading) return <h3 className="sub-heading">Loading...</h3>;
-  console.log(restaurants);
 
   return (
     <section className="card-display">
