@@ -23,6 +23,16 @@ interface Restaurant {
   openNow: boolean;
 }
 
+interface Cuisine {
+  uuid: string;
+  name: string;
+  category: string;
+  description: string;
+  origin: string;
+  localRanking: string;
+  internationalRanking: string;
+}
+
 interface UserLocation {
   lat: number | null;
   log: number | null;
@@ -33,5 +43,6 @@ export type {
   ViewPropsInterface,
   SetViewPropsInterface,
   Restaurant,
+  Cuisine,
   UserLocation,
 };

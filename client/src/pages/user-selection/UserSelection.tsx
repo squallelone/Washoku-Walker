@@ -2,9 +2,10 @@ import "./styles.css";
 import { useState, useEffect } from "react";
 import RestaurantsFromSelection from "../../components/restaurants-from-selection/RestaurantsFromSelection.tsx";
 import tokyoWards from "../../tokyoWards.ts";
+import { Cuisine } from "../../types.ts";
 
 export default function UserSelection() {
-  const [cuisineTypes, setCusinesType] = useState<string[] | null>(null);
+  const [cuisineTypes, setCusinesType] = useState<Cuisine[] | null>(null);
   const [chosenCuisine, setChosenCuisine] = useState<string>("");
   const [chosenWard, setChosenWard] = useState<string>(tokyoWards[0]);
   const url = import.meta.env.VITE_CUISINE_TYPES;
@@ -42,8 +43,8 @@ export default function UserSelection() {
             <select onChange={(event) => handleCuisineSelection(event)}>
               <option value={chosenCuisine}></option>
               {cuisineTypes?.map((cuisine) => (
-                <option key={cuisine} value={cuisine}>
-                  {cuisine}
+                <option key={cuisine.uuid} value={cuisine.name}>
+                  {cuisine.name}
                 </option>
               ))}
             </select>
