@@ -34,8 +34,8 @@ export default function UserSelection() {
           <select onChange={(event) => handleCuisineSelection(event)}>
             <option value={chosenCuisine}></option>
             {cuisineTypes?.map((cuisine) => (
-              <option key={cuisine} value={cuisine}>
-                {cuisine}
+              <option key={cuisine.uuid} value={cuisine.name}>
+                {cuisine.name}
               </option>
             ))}
           </select>
