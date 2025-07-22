@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <button class="bg-zinc-300 hover:bg-zinc-500 p-2 rounded-xl">
+  <button class="btn btn-primary">
     <slot></slot>
   </button>
 </template>
