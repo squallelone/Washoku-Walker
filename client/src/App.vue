@@ -1,5 +1,9 @@
-<script setup></script>
+<script setup>
+import { RouterView } from 'vue-router'
+import Navbar from './components/Navbar.vue'
+</script>
 
 <template>
-  <h1>Washoku Walker</h1>
+  <Navbar />
+  <RouterView />
 </template>
