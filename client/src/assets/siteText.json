@@ -1,0 +1,14 @@
+{
+  "landingPage": {
+    "searchCard": {
+      "title": "I know what I want to eat",
+      "content": "Show me restaurant recommendations for a specific dish.",
+      "link": "/search"
+    },
+    "nearbyCard": {
+      "title": "I'm not sure where to start.",
+      "content": "Show restaurant recommendations near me.",
+      "link": "/nearby"
+    }
+  }
+}
