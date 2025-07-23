@@ -4,7 +4,7 @@ import text from '../assets/siteText.json'
 </script>
 
 <template>
-  <div class="flex flex-col md:flex-row gap-8 w-9/10 md:w-6/10 mx-auto mt-4 md:mt-32">
+  <div class="flex flex-col md:flex-row gap-8">
     <!-- Search -->
     <LandingPageCard
       :title="text.landingPage.searchCard.title"

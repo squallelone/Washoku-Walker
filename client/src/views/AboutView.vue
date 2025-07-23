@@ -5,7 +5,7 @@ import text from '../assets/siteText.json'
 
 <template>
   <Title text="About" />
-  <div class="flex flex-col w-9/10 md:w-5/10 mx-auto gap-4">
-    <p class="text-justify" v-for="para in text.aboutPage">{{ para }}</p>
+  <div class="flex flex-col gap-4">
+    <p class="text-justify md:text-xl" v-for="para in text.aboutPage">{{ para }}</p>
   </div>
 </template>

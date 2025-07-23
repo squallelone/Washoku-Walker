@@ -5,7 +5,7 @@ import Title from '@/components/Title.vue'
 
 <template>
   <div
-    class="flex flex-col justify-center items-center border border-base-300 p-4 my-4 mx-auto w-9/10 md:w-6/10 rounded shadow"
+    class="flex flex-col justify-center items-center border border-base-300 p-4 mx-auto my-4 md:w-1/2 rounded-2xl shadow"
   >
     <Title text="Login" />
     <GoogleLogin />
