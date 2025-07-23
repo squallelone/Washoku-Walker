@@ -6,7 +6,7 @@
       "link": "/search"
     },
     "nearbyCard": {
-      "title": "I'm not sure where to start.",
+      "title": "I'm not sure where to start",
       "content": "Show restaurant recommendations near me.",
       "link": "/nearby"
     }
