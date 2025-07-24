@@ -5,7 +5,7 @@ import NavBtn from './NavBtn.vue'
 
 <template>
   <header class="flex justify-between items-center p-4 bg-base-200">
-    <h1 class="font-bold text-2xl text-red-700">
+    <h1 class="font-bold text-2xl text-primary-content">
       <RouterLink to="/">Washoku Walker</RouterLink>
     </h1>
     <nav class="flex justify-around gap-2">
