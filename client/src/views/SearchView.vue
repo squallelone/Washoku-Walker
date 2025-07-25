@@ -8,28 +8,27 @@ const api = import.meta.env.VITE_API_URL
 // === Selection Data ===
 const selectedWard = ref('...')
 const selectedDish = ref('...')
-const dishData = ref([])
 const loading = ref(true)
 const error = ref(false)
 
-async function fetchDishData() {
-  const response = await fetch(`${api}/dishes`)
-  if (!response.ok) {
-    console.error(response)
-    error.value = true
-  }
-  try {
-    const data = await response.json()
-    dishData.value = data
-  } catch (error) {
-    console.error(error)
-    error.value = true
-  } finally {
-    loading.value = false
-  }
-}
+// async function fetchDishData() {
+//   const response = await fetch(`${api}/dishes`)
+//   if (!response.ok) {
+//     console.error(response)
+//     error.value = true
+//   }
+//   try {
+//     const data = await response.json()
+//     dishData.value = data
+//   } catch (error) {
+//     console.error(error)
+//     error.value = true
+//   } finally {
+//     loading.value = false
+//   }
+// }
 
-onMounted(fetchDishData)
+// onMounted(fetchDishData)
 
 // === Form submission ===
 async function handleSubmit(event) {
@@ -47,10 +46,8 @@ async function handleSubmit(event) {
   >
     <p>I'm looking for</p>
     <!-- Dishes -->
-    <p v-if="loading">Loading...</p>
-    <p v-else-if="error">Something went wrong.</p>
-    <select v-else class="select" v-model="selectedDish">
-      <option v-for="dish of dishData" :value="dish.name">{{ dish.name }}</option>
+    <select class="select" v-model="selectedDish">
+      <option v-for="dish of text.dishes" :value="dish.name">{{ dish.name }}</option>
     </select>
     <p>in</p>
     <!-- Tokyo Wards -->

@@ -40,5 +40,187 @@
     "Sumida",
     "Taito",
     "Toshima"
+  ],
+  "dishes": [
+    {
+      "uuid": "daf54fcf-de02-42db-8a58-37a8eea9ba82",
+      "name": "Chawanmushi",
+      "category": "Other",
+      "description": "Savory egg custard with seafood or vegetables",
+      "origin": "Kyushu",
+      "localRanking": "20",
+      "internationalRanking": "20"
+    },
+    {
+      "uuid": "f31c2d59-1316-4731-91ff-ca38b0f579b2",
+      "name": "Chirashi",
+      "category": "Fish",
+      "description": "Bowl of vinegared rice topped with raw fish",
+      "origin": "Hokkaido",
+      "localRanking": "17",
+      "internationalRanking": "17"
+    },
+    {
+      "uuid": "bf4c0ac9-815c-4e34-a3fb-29c44da1b188",
+      "name": "Gyoza",
+      "category": "Meat",
+      "description": "Pan-fried dumplings filled with meat",
+      "origin": "Utsunomiya",
+      "localRanking": "13",
+      "internationalRanking": "4"
+    },
+    {
+      "uuid": "98a6568a-148c-488d-8768-e7b92ac4af5c",
+      "name": "Gyudon",
+      "category": "Rice",
+      "description": "Rice bowl topped with sautéed beef and onions",
+      "origin": "Tokyo",
+      "localRanking": "3",
+      "internationalRanking": "12"
+    },
+    {
+      "uuid": "6a30e40a-8de6-454e-a7f8-66de1a1b2a18",
+      "name": "Karaage",
+      "category": "Meat",
+      "description": "Marinated and fried chicken pieces",
+      "origin": "Oita",
+      "localRanking": "16",
+      "internationalRanking": "15"
+    },
+    {
+      "uuid": "17af56cf-328a-483d-a4ea-3d06364db071",
+      "name": "Katsu Curry",
+      "category": "Meat",
+      "description": "Breaded pork cutlet with Japanese curry and rice",
+      "origin": "Tokyo",
+      "localRanking": "4",
+      "internationalRanking": "5"
+    },
+    {
+      "uuid": "e1849d9d-8938-4b79-9348-58e38b335992",
+      "name": "Katsudon",
+      "category": "Rice",
+      "description": "Rice bowl with breaded pork cutlet and egg",
+      "origin": "Tokyo",
+      "localRanking": "5",
+      "internationalRanking": "9"
+    },
+    {
+      "uuid": "4caec9fd-d9e6-4e0c-bb75-047ab0c6bd4b",
+      "name": "Miso Shiru",
+      "category": "Soup",
+      "description": "Miso soup with tofu and seaweed",
+      "origin": "Various",
+      "localRanking": "15",
+      "internationalRanking": "14"
+    },
+    {
+      "uuid": "2f9527e7-4bf3-4c29-b08c-033fee2fe98d",
+      "name": "Nikujaga",
+      "category": "Meat",
+      "description": "Beef and potato stew",
+      "origin": "Tokyo",
+      "localRanking": "18",
+      "internationalRanking": "18"
+    },
+    {
+      "uuid": "81932e2c-b961-4936-a495-d01100d6e44a",
+      "name": "Okonomiyaki",
+      "category": "Other",
+      "description": "Savory Japanese pancake with various toppings",
+      "origin": "Osaka",
+      "localRanking": "10",
+      "internationalRanking": "13"
+    },
+    {
+      "uuid": "3be26fd6-ea8b-4d02-93b6-5d5e07c37f51",
+      "name": "Onigiri",
+      "category": "Rice",
+      "description": "Rice balls often with fillings",
+      "origin": "Various",
+      "localRanking": "8",
+      "internationalRanking": "8"
+    },
+    {
+      "uuid": "63a0e2fb-aae1-4a7f-ba95-299ad8b8753b",
+      "name": "Oyakodon",
+      "category": "Rice",
+      "description": "Rice bowl topped with chicken and egg",
+      "origin": "Tokyo",
+      "localRanking": "11",
+      "internationalRanking": "16"
+    },
+    {
+      "uuid": "46f872b9-9183-4f7d-9479-abcc15e4e839",
+      "name": "Ramen",
+      "category": "Noodles",
+      "description": "Noodles served in a flavorful broth",
+      "origin": "Fukuoka",
+      "localRanking": "1",
+      "internationalRanking": "2"
+    },
+    {
+      "uuid": "d9595562-e2f6-46be-93a3-7006c0f65d9d",
+      "name": "Shabu Shabu",
+      "category": "Meat",
+      "description": "Japanese hotpot with thinly sliced meat",
+      "origin": "Osaka",
+      "localRanking": "19",
+      "internationalRanking": "19"
+    },
+    {
+      "uuid": "4f631123-b056-4de8-b697-9a380d20ada7",
+      "name": "Soba",
+      "category": "Noodles",
+      "description": "Thin buckwheat noodles",
+      "origin": "Nagano",
+      "localRanking": "7",
+      "internationalRanking": "11"
+    },
+    {
+      "uuid": "d56caacc-7527-477e-969a-75ce8a1a6c6f",
+      "name": "Sushi",
+      "category": "Fish",
+      "description": "Vinegared rice with raw fish or seafood",
+      "origin": "Tokyo",
+      "localRanking": "2",
+      "internationalRanking": "1"
+    },
+    {
+      "uuid": "380b883c-49d4-4850-8ce7-2a2025385b33",
+      "name": "Takoyaki",
+      "category": "Other",
+      "description": "Ball-shaped snacks filled with octopus",
+      "origin": "Osaka",
+      "localRanking": "14",
+      "internationalRanking": "7"
+    },
+    {
+      "uuid": "2a2bb16b-8795-4ff4-afa0-482d9d75fc88",
+      "name": "Tempura",
+      "category": "Fish",
+      "description": "Deep-fried seafood or vegetables",
+      "origin": "Tokyo",
+      "localRanking": "12",
+      "internationalRanking": "3"
+    },
+    {
+      "uuid": "9fe96623-1cb8-4514-b381-7facec40bd93",
+      "name": "Udon",
+      "category": "Noodles",
+      "description": "Thick wheat noodles in a broth",
+      "origin": "Kagawa",
+      "localRanking": "6",
+      "internationalRanking": "10"
+    },
+    {
+      "uuid": "afceed39-f67b-4a1c-8f14-f5c7f159292d",
+      "name": "Yakitori",
+      "category": "Meat",
+      "description": "Grilled chicken skewers",
+      "origin": "Tokyo",
+      "localRanking": "9",
+      "internationalRanking": "6"
+    }
   ]
 }
