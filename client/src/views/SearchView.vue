@@ -1,7 +1,11 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import Title from '@/components/Title.vue'
+import { ref } from 'vue'
+
+import ErrorMessage from '@/components/ErrorMessage.vue'
+import LoadingSpinner from '@/components/LoadingSpinner.vue'
 import RestaurantCard from '@/components/RestaurantCard.vue'
+import Title from '@/components/Title.vue'
+
 import text from '../assets/siteText.json'
 
 const api = import.meta.env.VITE_API_URL
@@ -80,11 +84,11 @@ function resetSearch() {
   </div>
 
   <!-- Search results -->
-  <div v-if="loading">
-    <p>Loading...</p>
+  <div v-if="loading" class="h-full">
+    <LoadingSpinner />
   </div>
   <div v-else-if="error">
-    <p>Something went wrong.</p>
+    <ErrorMessage />
   </div>
   <div v-else-if="restaurants.length === 0 && searchDone">
     <p>No results</p>
