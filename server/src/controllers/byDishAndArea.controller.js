@@ -12,7 +12,7 @@ byDishAndAreaController.get("/", async (req, res) => {
   try {
     const places = await getRestaurantsByDishAndArea(dish, area);
     if (Array.isArray(places)) {
-      res.json(places.slice(0, 5));
+      res.json(places);
     }
     console.error("attempted to fetch from google api:", places);
     res.status(500);
