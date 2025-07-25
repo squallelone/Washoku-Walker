@@ -67,7 +67,7 @@ function processPlaces(rawPlaces) {
     };
   });
 
-  return places;
+  return places.sort((a, b) => b.rating - a.rating);
 }
 
 export { getRecommendedRestaurants, getRestaurantsByDishAndArea };
