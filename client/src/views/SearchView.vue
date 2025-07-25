@@ -82,6 +82,9 @@ function resetSearch() {
       </button>
     </form>
   </div>
+  <div v-else class="flex justify-center">
+    <button class="btn btn-primary" @click="resetSearch">Search again</button>
+  </div>
 
   <!-- Search results -->
   <div v-if="loading" class="h-full">
@@ -93,8 +96,7 @@ function resetSearch() {
   <div v-else-if="restaurants.length === 0 && searchDone">
     <p>No results</p>
   </div>
-  <div v-else class="flex flex-col my-4 mx-auto gap-4">
-    <button v-if="searchDone" class="btn btn-primary" @click="resetSearch">Search again</button>
+  <div v-else class="flex flex-col my-4 mx-auto gap-4 md:grid md:grid-cols-3">
     <div v-for="restaurant of restaurants">
       <RestaurantCard :restaurantData="restaurant" />
     </div>

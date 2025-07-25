@@ -14,10 +14,10 @@ defineProps({
     <hr />
     <span>Rating: {{ restaurantData.rating }}</span>
     <hr />
-    <div>
+    <!-- <div>
       <p>Address:</p>
       <p class="text-sm">{{ restaurantData.address }}</p>
-    </div>
+    </div> -->
     <hr />
     <a :href="restaurantData.url">Link</a>
     <hr />
