@@ -5,6 +5,7 @@ import ErrorMessage from '@/components/ErrorMessage.vue'
 import LoadingSpinner from '@/components/LoadingSpinner.vue'
 import RestaurantCard from '@/components/RestaurantCard.vue'
 import Title from '@/components/Title.vue'
+import useFetchRestaurants from '@/composablies/useFetchRestaurants'
 
 import text from '../assets/siteText.json'
 
@@ -14,35 +15,15 @@ const api = import.meta.env.VITE_API_URL
 const selectedWard = ref('...')
 const selectedDish = ref('...')
 const searchDone = ref(false)
-const loading = ref(false)
-const error = ref(false)
-const restaurants = ref([])
+const { loading, fetchError, restaurants, fetchRestaurants } = useFetchRestaurants()
 
 // === Form submission ===
 async function handleSubmit(event) {
   event.preventDefault()
 
-  async function fetchRestaurants() {
-    loading.value = true
-    const response = await fetch(
-      `${api}/by-dish-area?dish=${selectedDish.value}&area=${selectedWard.value}`,
-    )
-    if (!response.ok) {
-      console.error(response)
-      error.value = true
-    }
-    try {
-      const data = await response.json()
-      restaurants.value = data
-      searchDone.value = true
-    } catch (error) {
-      console.error(error)
-      error.value = true
-    } finally {
-      loading.value = false
-    }
-  }
-  fetchRestaurants()
+  const url = `${api}/by-dish-area?dish=${selectedDish.value}&area=${selectedWard.value}`
+  await fetchRestaurants(url)
+  if (restaurants) searchDone.value = true
 }
 
 function resetSearch() {
@@ -90,7 +71,7 @@ function resetSearch() {
   <div v-if="loading" class="h-full">
     <LoadingSpinner />
   </div>
-  <div v-else-if="error">
+  <div v-else-if="fetchError">
     <ErrorMessage />
   </div>
   <div v-else-if="restaurants.length === 0 && searchDone">
