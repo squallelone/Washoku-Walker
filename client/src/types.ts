@@ -16,4 +16,18 @@ interface LocationData {
   locationShared: Ref<boolean>
 }
 
-export type { Dish, LocationData }
+interface Restaurant {
+  name: string
+  rating: number
+  address: string
+  url: string
+  openNow: boolean
+}
+
+interface RestaurantFetch {
+  loading: Ref<boolean>
+  error: Ref<boolean>
+  restaurants: Restaurant[]
+}
+
+export type { Dish, LocationData, RestaurantFetch }
