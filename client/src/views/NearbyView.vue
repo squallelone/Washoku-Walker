@@ -1,3 +1,10 @@
-<script setup></script>
+<script setup>
+import { useBrowserLocationStore } from '@/stores/browserLoc'
 
-<template>Nearby view</template>
+const browserLocStore = useBrowserLocationStore()
+</script>
+
+<template>
+  <p>Latitude: {{ browserLocStore.latitude }}</p>
+  <p>Longitude: {{ browserLocStore.longitude }}</p>
+</template>
