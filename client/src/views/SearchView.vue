@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
 import ErrorMessage from '@/components/ErrorMessage.vue'
@@ -18,7 +18,7 @@ const searchDone = ref(false)
 const { loading, fetchError, restaurants, fetchRestaurants } = useFetchRestaurants()
 
 // === Form submission ===
-async function handleSubmit(event) {
+async function handleSubmit(event: Event): Promise<void> {
   event.preventDefault()
 
   const url = `${api}/by-dish-area?dish=${selectedDish.value}&area=${selectedWard.value}`
@@ -26,7 +26,7 @@ async function handleSubmit(event) {
   if (restaurants) searchDone.value = true
 }
 
-function resetSearch() {
+function resetSearch(): void {
   searchDone.value = false
   restaurants.value = []
 }
