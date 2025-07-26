@@ -26,8 +26,9 @@ interface Restaurant {
 
 interface RestaurantFetch {
   loading: Ref<boolean>
-  error: Ref<boolean>
-  restaurants: Restaurant[]
+  fetchError: Ref<boolean>
+  restaurants: Ref<Restaurant[]>
+  fetchRestaurants: (url: string) => Promise<void>
 }
 
-export type { Dish, LocationData, RestaurantFetch }
+export type { Dish, LocationData, Restaurant, RestaurantFetch }
