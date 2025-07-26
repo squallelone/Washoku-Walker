@@ -1,4 +1,4 @@
-import { Ref } from "vue"
+import type { Ref } from 'vue'
 
 interface Dish {
   uuid: string
@@ -8,11 +8,11 @@ interface Dish {
   origin: string
   localRanking: string
   internationalRanking: string
-},
+}
 
 interface LocationData {
-  latitude: Ref<number>,
-  longitude: Ref<number>,
+  latitude: Ref<number>
+  longitude: Ref<number>
   locationShared: Ref<boolean>
 }
 
