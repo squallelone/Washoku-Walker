@@ -1,7 +1,7 @@
 import { ref } from 'vue'
-import type { Restaurant, RestaurantFetch } from '@/types'
+import type { Restaurant, SearchedRestaurantFetch } from '@/types'
 
-export default function useFetchRestaurants(): RestaurantFetch {
+export default function useFetchRestaurants(): SearchedRestaurantFetch {
   const loading = ref(false)
   const fetchError = ref(false)
   const restaurants = ref<Restaurant[]>([])
