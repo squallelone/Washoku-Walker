@@ -1,10 +1,47 @@
 <script setup>
+import { onMounted } from 'vue'
+
+import ErrorMessage from '@/components/ErrorMessage.vue'
+import LoadingSpinner from '@/components/LoadingSpinner.vue'
+import RestaurantCard from '@/components/RestaurantCard.vue'
+import Title from '@/components/Title.vue'
+
+import text from '../assets/siteText.json'
+
 import { useBrowserLocationStore } from '@/stores/browserLoc'
+import useFetchRecommendations from '@/composablies/useFetchRecommendations'
 
 const browserLocStore = useBrowserLocationStore()
+const { loading, fetchError, restaurants, fetchRecommendations } = useFetchRecommendations()
+const api = import.meta.env.VITE_API_URL
+
+onMounted(() => {
+  console.log('lat:', browserLocStore.latitude)
+  console.log('long:', browserLocStore.longitude)
+
+  fetchRecommendations(
+    `${api}/recommendations`,
+    browserLocStore.latitude,
+    browserLocStore.longitude,
+  )
+})
 </script>
 
 <template>
-  <p>Latitude: {{ browserLocStore.latitude }}</p>
-  <p>Longitude: {{ browserLocStore.longitude }}</p>
+  <Title :text="text.nearbySearch.title" />
+  <!-- Results -->
+  <div v-if="loading" class="h-full">
+    <LoadingSpinner />
+  </div>
+  <div v-else-if="fetchError">
+    <ErrorMessage />
+  </div>
+  <div v-else-if="restaurants.length === 0">
+    <p>No results</p>
+  </div>
+  <div v-else class="flex flex-col my-4 mx-auto gap-4 md:grid md:grid-cols-3">
+    <div v-for="restaurant of restaurants">
+      <RestaurantCard :restaurant="restaurant" />
+    </div>
+  </div>
 </template>
