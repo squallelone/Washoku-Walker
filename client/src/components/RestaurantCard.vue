@@ -1,27 +1,27 @@
-<script setup>
+<script setup lang="ts">
 import { defineProps } from 'vue'
 import ClosedBadge from './ClosedBadge.vue'
 import OpenBadge from './OpenBadge.vue'
+import type { Restaurant } from '@/types'
 
-defineProps({
-  restaurantData: Object,
-})
+const props = defineProps<{ restaurant: Restaurant }>()
+// console.log(restaurant)
+
+// defineProps({
+//   restaurant: Object,
+// })
 </script>
 
 <template>
   <div class="bg-base-200 shadow rounded-xl p-4">
-    <h2 class="text-xl font-bold">{{ restaurantData.name }}</h2>
+    <h2 class="text-xl font-bold">{{ props.restaurant.name }}</h2>
     <hr />
-    <span>Rating: {{ restaurantData.rating }}</span>
+    <span>Rating: {{ props.restaurant.rating }}</span>
     <hr />
-    <!-- <div>
-      <p>Address:</p>
-      <p class="text-sm">{{ restaurantData.address }}</p>
-    </div> -->
     <hr />
-    <a :href="restaurantData.url">Link</a>
+    <a :href="props.restaurant.url">Link</a>
     <hr />
-    <OpenBadge v-if="restaurantData.openNow" />
+    <OpenBadge v-if="props.restaurant.openNow" />
     <ClosedBadge v-else />
   </div>
 </template>

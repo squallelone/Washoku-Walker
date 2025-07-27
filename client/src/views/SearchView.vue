@@ -23,7 +23,9 @@ async function handleSubmit(event: Event): Promise<void> {
 
   const url = `${api}/by-dish-area?dish=${selectedDish.value}&area=${selectedWard.value}`
   await fetchRestaurants(url)
-  if (restaurants) searchDone.value = true
+  if (restaurants) {
+    searchDone.value = true
+  }
 }
 
 function resetSearch(): void {
@@ -79,7 +81,7 @@ function resetSearch(): void {
   </div>
   <div v-else class="flex flex-col my-4 mx-auto gap-4 md:grid md:grid-cols-3">
     <div v-for="restaurant of restaurants">
-      <RestaurantCard :restaurantData="restaurant" />
+      <RestaurantCard :restaurant="restaurant" />
     </div>
   </div>
 </template>
