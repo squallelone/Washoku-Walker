@@ -5,11 +5,6 @@ import OpenBadge from './OpenBadge.vue'
 import type { Restaurant } from '@/types'
 
 const props = defineProps<{ restaurant: Restaurant }>()
-// console.log(restaurant)
-
-// defineProps({
-//   restaurant: Object,
-// })
 </script>
 
 <template>
