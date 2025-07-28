@@ -17,7 +17,7 @@ async function getRecommendedRestaurants(locationData) {
     },
     body: JSON.stringify({
       includedPrimaryTypes: ["restaurant"],
-      maxResultCount: 5,
+      maxResultCount: 6,
       locationRestriction: {
         circle: {
           center: {
