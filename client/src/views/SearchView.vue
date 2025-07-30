@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+import CardGallery from '@/components/CardGallery.vue'
 import ErrorMessage from '@/components/ErrorMessage.vue'
 import LoadingSpinner from '@/components/LoadingSpinner.vue'
-import RestaurantCard from '@/components/RestaurantCard.vue'
 import Title from '@/components/Title.vue'
 
 import useFetchRestaurants from '@/composablies/useFetchRestaurants'
@@ -119,9 +119,5 @@ function toggleLocationMode() {
   <div v-else-if="restaurants.length === 0 && searchDone">
     <p>No results</p>
   </div>
-  <div v-else class="flex flex-col my-4 mx-auto gap-4 md:grid md:grid-cols-3">
-    <div v-for="restaurant of restaurants">
-      <RestaurantCard :restaurant="restaurant" />
-    </div>
-  </div>
+  <CardGallery v-else :restaurants="restaurants" />
 </template>
