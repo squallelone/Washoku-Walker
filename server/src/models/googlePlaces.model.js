@@ -1,8 +1,9 @@
 import dotenv from "dotenv";
 dotenv.config();
+import fieldMask from "../lib/fieldMask.js";
 
-const fieldMask =
-  "places.displayName,places.rating,places.formattedAddress,places.websiteUri,places.regularOpeningHours.openNow";
+// const fieldMask =
+//   "places.displayName,places.rating,places.formattedAddress,places.websiteUri,places.regularOpeningHours.openNow,places.id";
 
 // This is for users who aren't sure what they want and need restaurant
 // recommendations near them.
@@ -60,10 +61,11 @@ function processPlaces(rawPlaces) {
   const places = (rawPlaces.places || []).map((place) => {
     return {
       name: (place.displayName || {}).text ?? "noName",
-      rating: place.rating,
-      address: place.formattedAddress,
-      url: place.websiteUri,
-      openNow: (place.regularOpeningHours || {}).openNow,
+      id: place.id || "",
+      rating: place.rating || null,
+      address: place.formattedAddress || null,
+      url: place.websiteUri || "",
+      openNow: (place.regularOpeningHours || {}).openNow || null,
     };
   });
 
