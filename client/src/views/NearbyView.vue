@@ -1,9 +1,9 @@
 <script setup>
 import { onMounted } from 'vue'
 
+import CardGallery from '@/components/CardGallery.vue'
 import ErrorMessage from '@/components/ErrorMessage.vue'
 import LoadingSpinner from '@/components/LoadingSpinner.vue'
-import RestaurantCard from '@/components/RestaurantCard.vue'
 import Title from '@/components/Title.vue'
 
 import text from '../assets/siteText.json'
@@ -16,9 +16,6 @@ const { loading, fetchError, restaurants, fetchRecommendations } = useFetchRecom
 const api = import.meta.env.VITE_API_URL
 
 onMounted(() => {
-  console.log('lat:', browserLocStore.latitude)
-  console.log('long:', browserLocStore.longitude)
-
   fetchRecommendations(
     `${api}/recommendations`,
     browserLocStore.latitude,
@@ -39,9 +36,5 @@ onMounted(() => {
   <div v-else-if="restaurants.length === 0">
     <p>No results</p>
   </div>
-  <div v-else class="flex flex-col my-4 mx-auto gap-4 md:grid md:grid-cols-3">
-    <div v-for="restaurant of restaurants">
-      <RestaurantCard :restaurant="restaurant" />
-    </div>
-  </div>
+  <CardGallery v-else :restaurants="restaurants" />
 </template>
