@@ -5,7 +5,6 @@ import ErrorMessage from '@/components/ErrorMessage.vue'
 import LoadingSpinner from '@/components/LoadingSpinner.vue'
 import RestaurantCard from '@/components/RestaurantCard.vue'
 import Title from '@/components/Title.vue'
-import SearchToggles from '@/components/SearchToggles.vue'
 
 import useFetchRestaurants from '@/composablies/useFetchRestaurants'
 
