@@ -18,10 +18,13 @@ interface LocationData {
 
 interface Restaurant {
   name: string
-  rating: number
+  id: string
+  rating: number | null
   address: string
   url: string
-  openNow: boolean
+  openNow: boolean | null
+  startPrice: number | null
+  endPrice: number | null
 }
 
 interface RestaurantFetch {
