@@ -60,7 +60,7 @@ function processPlaces(rawPlaces) {
       name: (place.displayName || {}).text ?? "noName",
       id: place.id || "",
       rating: place.rating || null,
-      address: place.formattedAddress || null,
+      address: place.formattedAddress || "",
       url: place.websiteUri || "",
       openNow: (place.regularOpeningHours || {}).openNow || null,
       startPrice: place.priceRange.startPrice.units || null,
