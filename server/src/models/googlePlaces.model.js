@@ -2,9 +2,6 @@ import dotenv from "dotenv";
 dotenv.config();
 import fieldMask from "../lib/fieldMask.js";
 
-// const fieldMask =
-//   "places.displayName,places.rating,places.formattedAddress,places.websiteUri,places.regularOpeningHours.openNow,places.id";
-
 // This is for users who aren't sure what they want and need restaurant
 // recommendations near them.
 async function getRecommendedRestaurants(locationData) {
@@ -66,6 +63,8 @@ function processPlaces(rawPlaces) {
       address: place.formattedAddress || null,
       url: place.websiteUri || "",
       openNow: (place.regularOpeningHours || {}).openNow || null,
+      startPrice: place.priceRange.startPrice.units || null,
+      endPrice: place.priceRange.endPrice.units || null,
     };
   });
 
