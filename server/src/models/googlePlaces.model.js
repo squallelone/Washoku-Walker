@@ -63,8 +63,6 @@ function processPlaces(rawPlaces) {
       address: place.formattedAddress || "",
       url: place.websiteUri || "",
       openNow: (place.regularOpeningHours || {}).openNow || null,
-      startPrice: place.priceRange.startPrice.units || null,
-      endPrice: place.priceRange.endPrice.units || null,
     };
   });
 
