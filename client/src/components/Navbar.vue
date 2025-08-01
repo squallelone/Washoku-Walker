@@ -13,9 +13,9 @@ import NavBtn from './NavBtn.vue'
         <RouterLink to="/about">About</RouterLink>
       </NavBtn>
 
-      <NavBtn>
+      <!-- <NavBtn>
         <RouterLink to="/login">Login</RouterLink>
-      </NavBtn>
+      </NavBtn> -->
     </nav>
   </header>
 </template>
