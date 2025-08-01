@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useRoute } from 'vue-router'
 import Title from '@/components/Title.vue'
 import OpenBadge from '@/components/OpenBadge.vue'
