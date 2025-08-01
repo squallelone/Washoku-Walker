@@ -1,37 +1,44 @@
-type DisplayMode =
-  | "landingPage"
-  | "recommendations"
-  | "userSelection"
-  | "login"
-  | "userProfile"
-  | "aboutPage";
+import type { Ref } from 'vue'
 
-interface ViewPropsInterface {
-  view: DisplayMode;
-  setView: (mode: DisplayMode) => void;
+interface Dish {
+  uuid: string
+  name: string
+  category: string
+  description: string
+  origin: string
+  localRanking: string
+  internationalRanking: string
 }
 
-interface SetViewPropsInterface {
-  setView: (mode: DisplayMode) => void;
+interface LocationData {
+  latitude: Ref<number>
+  longitude: Ref<number>
+  locationShared: Ref<boolean>
 }
 
 interface Restaurant {
-  name: string;
-  rating: number;
-  address: string;
-  url: string;
-  openNow: boolean;
+  name: string
+  id: string
+  rating: number | null
+  address: string
+  url: string
+  openNow: boolean | null
+  startPrice: number | null
+  endPrice: number | null
 }
 
-interface UserLocation {
-  lat: number | null;
-  log: number | null;
+interface RestaurantFetch {
+  loading: Ref<boolean>
+  fetchError: Ref<boolean>
+  restaurants: Ref<Restaurant[]>
 }
 
-export type {
-  DisplayMode,
-  ViewPropsInterface,
-  SetViewPropsInterface,
-  Restaurant,
-  UserLocation,
-};
+interface SearchedRestaurantFetch extends RestaurantFetch {
+  fetchRestaurants: (url: string) => Promise<void>
+}
+
+interface RecommendedRestaurantFetch extends RestaurantFetch {
+  fetchRecommendations: (url: string, latitude: number, longitude: number) => Promise<void>
+}
+
+export type { Dish, LocationData, Restaurant, SearchedRestaurantFetch, RecommendedRestaurantFetch }

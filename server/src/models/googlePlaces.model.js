@@ -1,8 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
-
-const fieldMask =
-  "places.displayName,places.rating,places.formattedAddress,places.websiteUri,places.regularOpeningHours.openNow";
+import fieldMask from "../lib/fieldMask.js";
 
 // This is for users who aren't sure what they want and need restaurant
 // recommendations near them.
@@ -17,7 +15,7 @@ async function getRecommendedRestaurants(locationData) {
     },
     body: JSON.stringify({
       includedPrimaryTypes: ["restaurant"],
-      maxResultCount: 5,
+      maxResultCount: 6,
       locationRestriction: {
         circle: {
           center: {
@@ -49,22 +47,26 @@ async function getRestaurantsByDishAndArea(dish, area) {
     }),
   });
   const data = await response.json();
-  return processPlaces(data);
+  if (data.places) {
+    return processPlaces(data);
+  }
+  console.error(data);
 }
 
 // Helper function
 function processPlaces(rawPlaces) {
-  const places = rawPlaces.places.map((place) => {
+  const places = (rawPlaces.places || []).map((place) => {
     return {
-      name: place.displayName.text,
-      rating: place.rating,
-      address: place.formattedAddress,
-      url: place.websiteUri,
-      openNow: place.regularOpeningHours.openNow,
+      name: (place.displayName || {}).text ?? "noName",
+      id: place.id || "",
+      rating: place.rating || null,
+      address: place.formattedAddress || "",
+      url: place.websiteUri || "",
+      openNow: (place.regularOpeningHours || {}).openNow || null,
     };
   });
 
-  return places;
+  return places.sort((a, b) => b.rating - a.rating);
 }
 
 export { getRecommendedRestaurants, getRestaurantsByDishAndArea };
