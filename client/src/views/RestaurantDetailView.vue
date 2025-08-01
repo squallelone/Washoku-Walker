@@ -6,7 +6,6 @@ import ClosedBadge from '@/components/ClosedBadge.vue'
 import getLinkText from '@/utils/getLinkText'
 
 const route = useRoute()
-console.log('url:', route.query)
 
 const linkText = getLinkText(route.query.url, route.query.name)
 </script>
