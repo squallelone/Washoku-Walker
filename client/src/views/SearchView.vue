@@ -4,6 +4,7 @@ import { ref } from 'vue'
 import CardGallery from '@/components/CardGallery.vue'
 import ErrorMessage from '@/components/ErrorMessage.vue'
 import LoadingSpinner from '@/components/LoadingSpinner.vue'
+import NoResults from '@/components/NoResults.vue'
 import Title from '@/components/Title.vue'
 
 import useFetchRestaurants from '@/composablies/useFetchRestaurants'
@@ -117,7 +118,7 @@ function toggleLocationMode() {
     <ErrorMessage />
   </div>
   <div v-else-if="restaurants.length === 0 && searchDone">
-    <p>No results</p>
+    <NoResults text="No results" />
   </div>
   <CardGallery v-else :restaurants="restaurants" />
 </template>

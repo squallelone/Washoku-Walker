@@ -4,6 +4,7 @@ import { onMounted } from 'vue'
 import CardGallery from '@/components/CardGallery.vue'
 import ErrorMessage from '@/components/ErrorMessage.vue'
 import LoadingSpinner from '@/components/LoadingSpinner.vue'
+import NoResults from '@/components/NoResults.vue'
 import Title from '@/components/Title.vue'
 
 import text from '../assets/siteText.json'
@@ -34,7 +35,7 @@ onMounted(() => {
     <ErrorMessage />
   </div>
   <div v-else-if="restaurants.length === 0">
-    <p>No results</p>
+    <NoResults text="No results near you." />
   </div>
   <CardGallery v-else :restaurants="restaurants" />
 </template>
