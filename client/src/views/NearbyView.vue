@@ -34,6 +34,9 @@ onMounted(() => {
   <div v-else-if="fetchError">
     <ErrorMessage />
   </div>
+  <div v-else-if="browserLocStore.latitude === 0 || browserLocStore.longitude === 0">
+    <NoResults text="You need to share your location to use this feature." />
+  </div>
   <div v-else-if="restaurants.length === 0">
     <NoResults text="No results near you." />
   </div>
