@@ -13,8 +13,7 @@
   },
   "aboutPage": {
     "p1": "Washoku walker is an app that lets you find quality Japanese food (washoku) near you.",
-    "p2": "If you're familiar with Japanese food and know what you want, you can find restaurants by cusine. Not sure what you want? We'll find a few highly rated restaurants nearby.",
-    "p3": "In either case, Washoku Walker searches within a 1.5 km radius to get you the best Japanese food we can find."
+    "p2": "If you're familiar with Japanese food and know what you want, you can find restaurants by cusine. Not sure what you want? We'll find a few highly rated restaurants nearby to get you the best Japanese food we can find."
   },
   "nearbySearch": {
     "title": "Recommended Restaurants Near You"

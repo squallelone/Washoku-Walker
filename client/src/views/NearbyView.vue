@@ -4,6 +4,7 @@ import { onMounted } from 'vue'
 import CardGallery from '@/components/CardGallery.vue'
 import ErrorMessage from '@/components/ErrorMessage.vue'
 import LoadingSpinner from '@/components/LoadingSpinner.vue'
+import NoResults from '@/components/NoResults.vue'
 import Title from '@/components/Title.vue'
 
 import text from '../assets/siteText.json'
@@ -27,14 +28,19 @@ onMounted(() => {
 <template>
   <Title :text="text.nearbySearch.title" />
   <!-- Results -->
-  <div v-if="loading" class="h-full">
-    <LoadingSpinner />
-  </div>
-  <div v-else-if="fetchError">
-    <ErrorMessage />
-  </div>
-  <div v-else-if="restaurants.length === 0">
-    <p>No results</p>
-  </div>
-  <CardGallery v-else :restaurants="restaurants" />
+  <section id="restaurant-results">
+    <div v-if="loading" class="h-full">
+      <LoadingSpinner />
+    </div>
+    <div v-else-if="fetchError">
+      <ErrorMessage />
+    </div>
+    <div v-else-if="browserLocStore.latitude === 0 || browserLocStore.longitude === 0">
+      <NoResults text="You need to share your location to use this feature." />
+    </div>
+    <div v-else-if="restaurants.length === 0">
+      <NoResults text="No results near you." />
+    </div>
+    <CardGallery v-else :restaurants="restaurants" />
+  </section>
 </template>
