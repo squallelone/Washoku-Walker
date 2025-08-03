@@ -89,36 +89,40 @@ function toggleLocationMode() {
     </form>
 
     <!-- Search Toggles -->
-    <div class="collapse bg-base-100 border-base-300 border mt-4">
-      <input type="checkbox" />
-      <div class="collapse-title font-semibold md:text-center">Search Options</div>
-      <div class="collapse-content text-sm flex flex-col gap-2 md:flex-row md:justify-around">
-        <div class="flex flex-row gap-2">
-          <input type="checkbox" class="toggle" @click="toggleDishMode" />
-          <span v-if="dishMode === 'traditional'">Traditional Food</span>
-          <span v-else>Anything</span>
-        </div>
-        <div class="flex flex-row gap-2">
-          <input type="checkbox" class="toggle" @click="toggleLocationMode" />
-          <span v-if="locationMode === 'tokyo'">Tokyo Wards</span>
-          <span v-else>Anywhere</span>
+    <section id="toggles">
+      <div class="collapse bg-base-100 border-base-300 border mt-4">
+        <input type="checkbox" />
+        <div class="collapse-title font-semibold md:text-center">Search Options</div>
+        <div class="collapse-content text-sm flex flex-col gap-2 md:flex-row md:justify-around">
+          <div class="flex flex-row gap-2">
+            <input type="checkbox" class="toggle" @click="toggleDishMode" />
+            <span v-if="dishMode === 'traditional'">Traditional Food</span>
+            <span v-else>Anything</span>
+          </div>
+          <div class="flex flex-row gap-2">
+            <input type="checkbox" class="toggle" @click="toggleLocationMode" />
+            <span v-if="locationMode === 'tokyo'">Tokyo Wards</span>
+            <span v-else>Anywhere</span>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
   <div v-else class="flex justify-center">
     <button class="btn btn-primary" @click="resetSearch">Search again</button>
   </div>
 
   <!-- Search results -->
-  <div v-if="loading" class="h-full">
-    <LoadingSpinner />
-  </div>
-  <div v-else-if="fetchError">
-    <ErrorMessage />
-  </div>
-  <div v-else-if="restaurants.length === 0 && searchDone">
-    <NoResults text="No results" />
-  </div>
-  <CardGallery v-else :restaurants="restaurants" />
+  <section id="search-results">
+    <div v-if="loading" class="h-full">
+      <LoadingSpinner />
+    </div>
+    <div v-else-if="fetchError">
+      <ErrorMessage />
+    </div>
+    <div v-else-if="restaurants.length === 0 && searchDone">
+      <NoResults text="No results" />
+    </div>
+    <CardGallery v-else :restaurants="restaurants" />
+  </section>
 </template>

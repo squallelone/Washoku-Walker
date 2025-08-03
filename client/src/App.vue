@@ -23,8 +23,8 @@ onMounted(() => {
 
 <template>
   <Navbar />
-  <div class="gap-8 w-9/10 md:w-6/10 mx-auto mt-4 md:mt-32 pb-20">
+  <main class="gap-8 w-9/10 md:w-6/10 mx-auto mt-4 md:mt-32 pb-20">
     <RouterView />
-  </div>
+  </main>
   <Footer />
 </template>

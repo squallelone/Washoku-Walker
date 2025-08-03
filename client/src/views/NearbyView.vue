@@ -28,17 +28,19 @@ onMounted(() => {
 <template>
   <Title :text="text.nearbySearch.title" />
   <!-- Results -->
-  <div v-if="loading" class="h-full">
-    <LoadingSpinner />
-  </div>
-  <div v-else-if="fetchError">
-    <ErrorMessage />
-  </div>
-  <div v-else-if="browserLocStore.latitude === 0 || browserLocStore.longitude === 0">
-    <NoResults text="You need to share your location to use this feature." />
-  </div>
-  <div v-else-if="restaurants.length === 0">
-    <NoResults text="No results near you." />
-  </div>
-  <CardGallery v-else :restaurants="restaurants" />
+  <section id="restaurant-results">
+    <div v-if="loading" class="h-full">
+      <LoadingSpinner />
+    </div>
+    <div v-else-if="fetchError">
+      <ErrorMessage />
+    </div>
+    <div v-else-if="browserLocStore.latitude === 0 || browserLocStore.longitude === 0">
+      <NoResults text="You need to share your location to use this feature." />
+    </div>
+    <div v-else-if="restaurants.length === 0">
+      <NoResults text="No results near you." />
+    </div>
+    <CardGallery v-else :restaurants="restaurants" />
+  </section>
 </template>
