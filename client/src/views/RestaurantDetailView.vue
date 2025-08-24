@@ -23,6 +23,7 @@ const linkText = getLinkText(url, name)
         <p>Address:</p>
         <p>{{ $route.query.address }}</p>
       </div>
+      <p v-if="$route.query.distance">{{ $route.query.distance }} from you.</p>
       <p v-if="$route.query.url">
         Link: <a class="underline text-info" :href="url">{{ linkText }}</a>
       </p>

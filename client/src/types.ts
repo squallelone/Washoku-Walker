@@ -16,6 +16,11 @@ interface LocationData {
   locationShared: Ref<boolean>
 }
 
+interface SimpleLocationData {
+  latitude: number
+  longitude: number
+}
+
 interface Restaurant {
   name: string
   id: string
@@ -43,4 +48,11 @@ interface RecommendedRestaurantFetch extends RestaurantFetch {
   fetchRecommendations: (url: string, latitude: number, longitude: number) => Promise<void>
 }
 
-export type { Dish, LocationData, Restaurant, SearchedRestaurantFetch, RecommendedRestaurantFetch }
+export type {
+  Dish,
+  LocationData,
+  SimpleLocationData,
+  Restaurant,
+  SearchedRestaurantFetch,
+  RecommendedRestaurantFetch,
+}
