@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Restaurant } from '@/types'
+import { useBrowserLocationStore } from '@/stores/browserLoc'
 import RestaurantCard from './RestaurantCard.vue'
 
 const props = defineProps<{ restaurants: Restaurant[] }>()
@@ -16,6 +17,8 @@ function toggleDisplayMode() {
     displayMode.value = 'all'
   }
 }
+
+const locData = useBrowserLocationStore()
 </script>
 
 <template>
@@ -29,12 +32,24 @@ function toggleDisplayMode() {
   </div>
   <div class="flex flex-col my-4 mx-auto gap-4 md:grid md:grid-cols-3">
     <!-- All restaurants -->
-    <div v-if="displayMode === 'all'" v-for="restaurant of props.restaurants">
-      <RestaurantCard :restaurant="restaurant" />
+    <div v-if="displayMode === 'all'">
+      <div v-for="restaurant of props.restaurants" :key="restaurant.id">
+        <RestaurantCard
+          :restaurant="restaurant"
+          :user-latitude="locData.latitude"
+          :user-longitude="locData.longitude"
+        />
+      </div>
     </div>
     <!-- Open restaurants only -->
-    <div v-else v-for="restaurant of openRestaurants">
-      <RestaurantCard :restaurant="restaurant" />
+    <div v-else>
+      <div v-for="restaurant of openRestaurants" :key="restaurant.id">
+        <RestaurantCard
+          :restaurant="restaurant"
+          :user-latitude="locData.latitude"
+          :user-longitude="locData.longitude"
+        />
+      </div>
     </div>
   </div>
 </template>

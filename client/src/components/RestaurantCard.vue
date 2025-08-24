@@ -5,7 +5,12 @@ import ClosedBadge from './ClosedBadge.vue'
 import OpenBadge from './OpenBadge.vue'
 import type { Restaurant } from '@/types'
 
-const props = defineProps<{ restaurant: Restaurant }>()
+const props = defineProps<{
+  restaurant: Restaurant
+  userLatitude: number
+  userLongitude: number
+}>()
+
 let queryString = '?name=' + props.restaurant.name
 queryString += '&rating=' + props.restaurant.rating
 queryString += '&address=' + props.restaurant.address
@@ -13,6 +18,8 @@ queryString += '&url=' + props.restaurant.url
 queryString += '&openNow=' + props.restaurant.openNow
 queryString += '&startPrice=' + props.restaurant.startPrice
 queryString += '&endPrice=' + props.restaurant.endPrice
+queryString += '&latitude=' + props.restaurant.latitude
+queryString += '&longitude=' + props.restaurant.longitude
 </script>
 
 <template>
