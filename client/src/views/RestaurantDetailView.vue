@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useRoute } from 'vue-router'
 import Title from '@/components/Title.vue'
 import OpenBadge from '@/components/OpenBadge.vue'
@@ -6,14 +6,16 @@ import ClosedBadge from '@/components/ClosedBadge.vue'
 import getLinkText from '@/utils/getLinkText'
 
 const route = useRoute()
+const url: string = route.query.url?.toString() ?? ''
+const name: string = route.query.name?.toString() ?? ''
 
-const linkText = getLinkText(route.query.url, route.query.name)
+const linkText = getLinkText(url, name)
 </script>
 
 <template>
   <section id="restaurant-details">
     <div class="bg-base-200 rounded-2xl shadow p-4">
-      <Title :text="$route.query.name" />
+      <Title :text="name" />
       <p v-if="$route.query.rating">Rating: {{ $route.query.rating }}</p>
       <OpenBadge v-if="$route.query.openNow === 'true'" />
       <ClosedBadge v-else />
@@ -22,7 +24,7 @@ const linkText = getLinkText(route.query.url, route.query.name)
         <p>{{ $route.query.address }}</p>
       </div>
       <p v-if="$route.query.url">
-        Link: <a class="underline text-info" :href="$route.query.url">{{ linkText }}</a>
+        Link: <a class="underline text-info" :href="url">{{ linkText }}</a>
       </p>
     </div>
   </section>
