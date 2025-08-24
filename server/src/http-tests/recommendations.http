@@ -1,0 +1,9 @@
+@root = http://localhost:8000/api/restaurant/recommendations
+
+post {{root}}
+Content-Type: application/json
+
+{
+    "lat": 35.69162270381466, 
+    "log": 139.69384123583447
+}

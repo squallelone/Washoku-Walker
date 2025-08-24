@@ -63,6 +63,8 @@ function processPlaces(rawPlaces) {
       address: place.formattedAddress || "",
       url: place.websiteUri || "",
       openNow: (place.regularOpeningHours || {}).openNow || null,
+      latitude: place.location.latitude,
+      longitude: place.location.longitude,
     };
   });
 
