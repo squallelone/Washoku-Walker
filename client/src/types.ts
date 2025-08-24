@@ -25,6 +25,8 @@ interface Restaurant {
   openNow: boolean | null
   startPrice: number | null
   endPrice: number | null
+  latitude: number
+  longitude: number
 }
 
 interface RestaurantFetch {
