@@ -32,6 +32,8 @@ queryString += '&url=' + props.restaurant.url
 queryString += '&openNow=' + props.restaurant.openNow
 queryString += '&startPrice=' + props.restaurant.startPrice
 queryString += '&endPrice=' + props.restaurant.endPrice
+queryString += '&latitude=' + props.restaurant.latitude
+queryString += '&longitude=' + props.restaurant.longitude
 queryString += '&distance=' + distance
 </script>
 
