@@ -15,9 +15,10 @@ const linkText = getLinkText(url, name)
 const restLat: string = route.query.latitude?.toString() ?? ''
 const restLong: string = route.query.longitude?.toString() ?? ''
 const mapCenter = {
-  lat: parseInt(restLat),
-  lng: parseInt(restLong),
+  lat: parseFloat(restLat),
+  lng: parseFloat(restLong),
 }
+console.log(mapCenter)
 </script>
 
 <template>
@@ -36,13 +37,16 @@ const mapCenter = {
         Link: <a class="underline text-info" :href="url">{{ linkText }}</a>
       </p>
 
-      <GMapMap
-        :center="mapCenter"
-        :zoom="7"
-        map-type-id="terrain"
-        style="max-width: 100%; max-height: 100%"
-      >
-      </GMapMap>
+      <div class="flex items-center justify-center">
+        <GMapMap
+          :center="mapCenter"
+          :zoom="14"
+          map-type-id="terrain"
+          class="h-60 w-full md:w-8/10 md:h-100"
+        >
+          <GMapMarker :position="mapCenter" />
+        </GMapMap>
+      </div>
     </div>
   </section>
 </template>
