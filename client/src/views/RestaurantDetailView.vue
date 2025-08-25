@@ -18,7 +18,6 @@ const mapCenter = {
   lat: parseFloat(restLat),
   lng: parseFloat(restLong),
 }
-console.log(mapCenter)
 </script>
 
 <template>
@@ -37,7 +36,7 @@ console.log(mapCenter)
         Link: <a class="underline text-info" :href="url">{{ linkText }}</a>
       </p>
 
-      <div class="flex items-center justify-center">
+      <div class="flex flex-col gap-2 mt-2 items-center justify-center">
         <GMapMap
           :center="mapCenter"
           :zoom="14"
@@ -46,6 +45,9 @@ console.log(mapCenter)
         >
           <GMapMarker :position="mapCenter" />
         </GMapMap>
+        <button type="button" class="btn btn-info">
+          <a :href="$route.query.googleMapsUri?.toString()">Open in Google Maps</a>
+        </button>
       </div>
     </div>
   </section>

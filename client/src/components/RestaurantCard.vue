@@ -23,8 +23,6 @@ const distance = getRestaurantDistance(
   },
 )
 
-// console.log(`${props.restaurant.name} is ${distance} from you.`)
-
 let queryString = '?name=' + props.restaurant.name
 queryString += '&rating=' + props.restaurant.rating
 queryString += '&address=' + props.restaurant.address
@@ -35,6 +33,7 @@ queryString += '&endPrice=' + props.restaurant.endPrice
 queryString += '&latitude=' + props.restaurant.latitude
 queryString += '&longitude=' + props.restaurant.longitude
 queryString += '&distance=' + distance
+queryString += '&googleMapsUri=' + encodeURIComponent(props.restaurant.googleMapsUri)
 </script>
 
 <template>
