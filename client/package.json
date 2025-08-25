@@ -19,6 +19,7 @@
     "pinia": "^3.0.3",
     "tailwindcss": "^4.1.11",
     "vue": "^3.5.17",
+    "vue-google-maps-community-fork": "^0.3.1",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
