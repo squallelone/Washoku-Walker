@@ -18,9 +18,6 @@ const mapCenter = {
   lat: parseFloat(restLat),
   lng: parseFloat(restLong),
 }
-
-console.log('gp key:', import.meta.env.VITE_MAPS_KEY)
-console.log('gm url:', route.query.googleMapsUri?.toString())
 </script>
 
 <template>
