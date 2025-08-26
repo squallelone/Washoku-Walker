@@ -45,9 +45,9 @@ const mapCenter = {
         >
           <GMapMarker :position="mapCenter" />
         </GMapMap>
-        <!-- <button type="button" class="btn btn-info">
+        <button type="button" class="btn btn-info">
           <a :href="$route.query.googleMapsUri?.toString()">Open in Google Maps</a>
-        </button> -->
+        </button>
       </div>
     </div>
   </section>

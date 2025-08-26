@@ -23,22 +23,31 @@ const distance = getRestaurantDistance(
   },
 )
 
-let queryString = '?name=' + props.restaurant.name
-queryString += '&rating=' + props.restaurant.rating
-queryString += '&address=' + props.restaurant.address
-queryString += '&url=' + props.restaurant.url
-queryString += '&openNow=' + props.restaurant.openNow
-queryString += '&startPrice=' + props.restaurant.startPrice
-queryString += '&endPrice=' + props.restaurant.endPrice
-queryString += '&latitude=' + props.restaurant.latitude
-queryString += '&longitude=' + props.restaurant.longitude
-queryString += '&distance=' + distance
-queryString += '&googleMapsUri=' + encodeURIComponent(props.restaurant.googleMapsUri)
+const queryOptions = {
+  name: props.restaurant.name,
+  rating: props.restaurant.rating?.toString() || '',
+  address: props.restaurant.address,
+  url: props.restaurant.url,
+  openNow: props.restaurant.openNow?.toString() || '',
+  startPrice: props.restaurant.startPrice?.toString() || '',
+  endPrice: props.restaurant.endPrice?.toString() || '',
+  latitude: props.restaurant.latitude.toString() || '',
+  longitude: props.restaurant.longitude.toString() || '',
+  distance: distance,
+  googleMapsUri: props.restaurant.googleMapsUri,
+}
 </script>
 
 <template>
   <div class="bg-base-200 shadow rounded-xl p-4">
-    <RouterLink :to="`/restaurant/${restaurant.id}${queryString}`" class="flex flex-col gap-1">
+    <RouterLink
+      :to="{
+        name: 'restaurant-details',
+        params: { id: restaurant.id },
+        query: queryOptions,
+      }"
+      class="flex flex-col gap-1"
+    >
       <h2 class="text-xl font-bold">{{ props.restaurant.name }}</h2>
       <p>
         <span>Rating: {{ props.restaurant.rating }}</span>
