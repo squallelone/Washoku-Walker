@@ -32,6 +32,7 @@ interface Restaurant {
   endPrice: number | null
   latitude: number
   longitude: number
+  googleMapsUri: string
 }
 
 interface RestaurantFetch {

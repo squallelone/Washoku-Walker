@@ -65,6 +65,7 @@ function processPlaces(rawPlaces) {
       openNow: (place.regularOpeningHours || {}).openNow || null,
       latitude: place.location.latitude,
       longitude: place.location.longitude,
+      googleMapsUri: place.googleMapsLinks.placeUri || "",
     };
   });
 

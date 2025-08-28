@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
+
 import Title from '@/components/Title.vue'
 import OpenBadge from '@/components/OpenBadge.vue'
 import ClosedBadge from '@/components/ClosedBadge.vue'
@@ -10,6 +11,13 @@ const url: string = route.query.url?.toString() ?? ''
 const name: string = route.query.name?.toString() ?? ''
 
 const linkText = getLinkText(url, name)
+
+const restLat: string = route.query.latitude?.toString() ?? ''
+const restLong: string = route.query.longitude?.toString() ?? ''
+const mapCenter = {
+  lat: parseFloat(restLat),
+  lng: parseFloat(restLong),
+}
 </script>
 
 <template>
@@ -27,6 +35,20 @@ const linkText = getLinkText(url, name)
       <p v-if="$route.query.url">
         Link: <a class="underline text-info" :href="url">{{ linkText }}</a>
       </p>
+
+      <div class="flex flex-col gap-2 mt-2 items-center justify-center">
+        <GMapMap
+          :center="mapCenter"
+          :zoom="14"
+          map-type-id="terrain"
+          class="h-60 w-full md:w-8/10 md:h-100"
+        >
+          <GMapMarker :position="mapCenter" />
+        </GMapMap>
+        <button type="button" class="btn btn-info">
+          <a :href="$route.query.googleMapsUri?.toString()">Open in Google Maps</a>
+        </button>
+      </div>
     </div>
   </section>
 </template>
